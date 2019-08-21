@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  ui:
+    networks:
+      - default
+    volumes:
+      - ./ui:/app/
+    build:
+      context: ./ui
+
+  api:
+    networks:
+      - default
+    volumes:
+      - ./api:/app/
+    build:
+      context: ./api

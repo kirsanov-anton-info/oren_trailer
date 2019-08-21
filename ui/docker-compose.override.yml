@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  ui:
+    ports:
+      - 8888:3000
+    volumes:
+      - .:/app/

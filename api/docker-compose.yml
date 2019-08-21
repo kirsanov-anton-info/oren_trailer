@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  postgres:
+    restart: always
+    image: postgres
+    environment:
+      - POSTGRES_USER='oren_trailer_admin'
+      - POSTGRES_PASSWORD='oren_trailer_password'
+      - POSTGRES_DB='oren_trailer_database'
+  api:
+    restart: always
+    build: .
+    depends_on:
+      - postgres
+    entrypoint: ["python", "__main__.py", "runserver"]

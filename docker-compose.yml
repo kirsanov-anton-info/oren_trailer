@@ -1,0 +1,19 @@
+version: "3.7"
+networks:
+    default:
+services:
+    proxy:
+        networks:
+            - default
+        image: nginx:alpine
+        restart: always
+        container_name: oren_trailer_proxy
+        ports:
+            - 7777:80
+        depends_on:
+            - api
+            - ui
+        volumes:
+            - ./nginx/pacs.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/proxy_params:/etc/nginx/proxy_params
+            - ./nginx/log:/var/log/nginx

@@ -1,0 +1,11 @@
+-i https://pypi.python.org/simple
+flask-cors
+flask-migrate
+flask-script
+flask
+Flask-API
+gunicorn
+psycopg2-binary
+testing.postgresql
+peewee
+ldap3
